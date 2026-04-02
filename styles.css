@@ -1,0 +1,131 @@
+:root {
+  color-scheme: light;
+  --bg-top: #f4efe6;
+  --bg-bottom: #ddd2c2;
+  --surface: rgba(255, 252, 247, 0.88);
+  --surface-border: rgba(70, 54, 36, 0.14);
+  --text: #2a2218;
+  --muted: #6e5b47;
+  --primary: #b65a2f;
+  --primary-hover: #9e4e27;
+  --secondary: #efe5d5;
+  --secondary-hover: #e5d7c0;
+  --shadow: 0 24px 60px rgba(79, 55, 28, 0.16);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.55), transparent 32%),
+    linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+  color: var(--text);
+}
+
+.app {
+  width: min(100%, 32rem);
+  padding: 1.5rem;
+}
+
+.timer-card {
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--surface-border);
+  border-radius: 1.5rem;
+  background: var(--surface);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+}
+
+.mode-label {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+}
+
+.time-display {
+  margin: 1rem 0 1.75rem;
+  font-size: clamp(4rem, 12vw, 6rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.9rem 1.5rem;
+  min-width: 8rem;
+  font: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 120ms ease, background-color 120ms ease, opacity 120ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button-primary {
+  background: var(--primary);
+  color: #fff9f2;
+}
+
+.button-primary:hover {
+  background: var(--primary-hover);
+}
+
+.button-secondary {
+  background: var(--secondary);
+  color: var(--text);
+}
+
+.button-secondary:hover {
+  background: var(--secondary-hover);
+}
+
+.status-message {
+  min-height: 1.5rem;
+  margin: 1.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 480px) {
+  .timer-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+}

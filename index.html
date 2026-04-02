@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>25:00 - Work</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="timer-card" aria-labelledby="mode-label">
+      <p class="eyebrow">Focus Timer</p>
+      <h1 id="mode-label" class="mode-label">Work</h1>
+      <p id="time-display" class="time-display" aria-live="polite">25:00</p>
+      <div class="actions">
+        <button id="primary-button" class="button button-primary" type="button">Start</button>
+        <button id="reset-button" class="button button-secondary" type="button">Reset</button>
+      </div>
+      <p id="status-message" class="status-message" aria-live="polite"></p>
+    </section>
+  </main>
+  <script src="timer.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
